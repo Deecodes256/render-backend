@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/public-css/journal.css">
+</head>
+
+<body class="forexbody">
+    <p class="desktop-only">AVAILABLE FOR DESKTOP ONLY</p>
+    <div class="trading-journal">
+        <h1 class="title-span">Forex trading journal</h1>
+        <!--Log out menu-->
+       
+        <!--Logout menu-->
+
+     <!--Header-->
+<div class="header">
+    <div class="dropdown-menu">
+        <input type="checkbox" name="" id="menu-toggle">
+        <label for="menu-toggle" class="dropdown">select </label>
+        <div class="menu-links">
+            <a href="">Forex</a>
+            <a href="/public/public-html/futures.html">Futures</a>
+
+
+        </div>
+    </div>
+
+    <button onclick="forexwinrate()">📊 Win Rate</button>
+    <div class="notification-container">
+
+        <input type="checkbox" id="notifications-toggle">
+        <label for="notifications-toggle" >Notifications 🔔<span class="noti-num">1</span></label>
+       
+
+        <div class="notification-menu">
+            <span>EU long,entry :1.76294,tp:1.89625,sl:1.76120
+                
+            </span>
+        </div>
+    </div>
+
+    <button onclick="forexdarkmode()">🌙 Dark Mode</button>
+
+    <div class="tip-menu">
+        <input type="checkbox" name="" id="tip-toggle">
+        <label for="tip-toggle" class="tip-label">Tips</label>
+        <ul class="tip-paragraph">
+            <li>Trade with only 1% of your account</li>
+            <br>
+            <li>Trade only A+ setups with a minimum of 1:2 RR</li>
+            <br>
+            <li>Trade during NY and London sessions</li>
+        </ul>
+    </div>
+    <div class="log-outmenu">
+        <input type="checkbox" name="" id="log-out">
+        <label for="log-out" class="logout-label">Logout menu
+        </label>
+        <div class="log-out-links">
+            <a href="/public/public-html/signin-page.html" onclick="logoutUser()">Log-out</a>
+            <a href="#">Feedback</a>
+        </div>
+    </div>
+</div>
+     <!--Header -->
+
+        <div class="balance-container">
+            <input type="text" name="" id="" placeholder="Type-in-capital" class="input-capital">
+            <button class="save-capital" onclick="balance()">Enter</button>
+            <span class="capital-display"></span>
+        </div>
+        <div class="profit-container">
+            <span class="profit-span">Total profit :</span>
+            <span class="total-profit-display"></span>
+        </div>
+      
+        <div class="stats">
+            <span id="wins">Wins: 0</span>
+            <span id="losses">Losses: 0</span>
+        </div>
+<div class="trend">
+    <span id="rev">Reversals:0</span>
+    <span id="cont">Continuations:0</span>
+</div>
+
+        <div class="add-input-grid">
+            <input type="text" placeholder="Trading pair" class="text-todo" />
+            <input type="date" class="duedate-js" />
+            <button class="add" onclick="forexaddlist()">Add</button>
+        </div>
+     
+        <div class="js-project-list todotask"></div>
+    </div>
+
+    <div class="premium-container">
+        <a href="/public/public-html/premium.html" class="premium-btn">Get premium !</a>
+    </div>
+
+    <script src="/public/public-js/forex.js"></script>
+
+</body>
+
+</html>

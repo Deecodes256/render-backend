@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futures progress tracker</title>
+    <link rel="stylesheet" href="/public/public-css/journal.css">
+</head>
+<body class="futuresbody">
+    <p class="desktop-only">AVAILABLE FOR DESKTOP ONLY</p>
+<div class="trading-journal">
+        <h2>Futures trading journal</h2>
+        <div class="header">
+            <button onclick="futureswinrate()">📊 Win Rate</button>
+            <div class="dropdown-menu">
+        
+                <input type="checkbox" name="" id="menu-toggle">
+                <label for="menu-toggle" class="dropdown">select </label>
+                <div class="menu-links">
+                 
+                    <a href="/public/public-html/futures.html">Futures</a>
+                    <a href="/public/public-html/forex.html">Forex</a>
+        
+                </div>
+            </div>
+           
+            <button onclick="futuresdarkmode()">🌙 Dark Mode</button>
+        
+        </div>
+        <div class="balance-container">
+            <input type="text" name="" id="" placeholder="Type-in-capital" class="input-capital">
+            <button class="save-capital" onclick="balance()">Enter</button>
+            <span class="capital-display"></span>
+        </div>
+        <div class="profit-container">
+            <span class="profit-span">Total-profit :</span>
+            <span class="total-profit-display"></span>
+        </div>
+
+
+<div class="stats">
+    <span id="wins">Wins: 0</span>
+    <span id="losses">Losses: 0</span>
+</div>
+<div class="trend">
+    <span id="rev">Reversals:0</span>
+    <span id="cont">Continuations:0</span>
+</div>
+
+
+
+
+        <div class="add-input-grid">
+            <input type="text" placeholder="Project name" class="text-todo" />
+            <input type="date" class="duedate-js" />
+            <button class="add" onclick="futuresaddlist()">Add</button>
+        
+        </div>
+        
+    
+        
+        
+        
+        <span class="confirm-text"></span>
+        <div class="js-project-list todotask"></div>
+     
+</div>
+<script src="/public/public-js/futures.js"></script>
+</body>
+
+</html>
