@@ -8,8 +8,8 @@ const app = express();/**This connects us to express frame(database) */
 const PORT = 3000;/**localhost 300 */
 
 app.use(express.json());/**This converts everything a user sends to JSON object */
-
-const Trade = require("./trade");/**This imports the trade model(array) */
+app.use(express.static("public"));
+const Trade = require("./models/trade");/**This imports the trade model(array) */
 
 const dbURI = process.env.MONGO_URI;
 
