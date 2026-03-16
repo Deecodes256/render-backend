@@ -5,23 +5,22 @@ const express = require("express");/** This creates a web server which acts as a
 const mongoose = require("mongoose");/**This helps the js talk to the database in mongodb */
 
 const app = express();/**This connects us to express frame(database) */
-const PORT = 3000;/**localhost 300 */
+const PORT = process.env.PORT || 3000;;/**localhost 300 */
 
 app.use(express.json());/**This converts everything a user sends to JSON object */
 app.use(express.static("public"));
 const Trade = require("./models/trade");/**This imports the trade model(array) */
 
 const dbURI = process.env.MONGO_URI;
-
-mongoose.connect(dbURI)/**This connects  you to the backend*/
+mongoose.connect(dbURI)
 .then(() => {
-    console.log("Database connected successfully 🚀");/**This shows only if the database has successfully connected */
-
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
+  console.log("Database connected successfully 🚀");
 })
 .catch(err => console.log(err));
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 
 app.get("/", (req, res) => {
