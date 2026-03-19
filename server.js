@@ -5,9 +5,17 @@ const express = require("express");/** This creates a web server which acts as a
 const mongoose = require("mongoose");/**This helps the js talk to the database in mongodb */
 
 const app = express();/**This connects us to express frame(database) */
-const PORT = process.env.PORT || 3000;;/**localhost 300 */
+const PORT = process.env.PORT || 3000;/**localhost 300 */
 
 app.use(express.json());/**This converts everything a user sends to JSON object */
+const session = require("express-session");
+
+app.use(session({
+  secret: "supersecretkey",
+  resave: false,
+  saveUninitialized: false
+}));
+
 app.use(express.static("public"));
 const Trade = require("./models/trade");/**This imports the trade model(array) */
 
@@ -24,7 +32,7 @@ app.listen(PORT, () => {
 
 
 app.get("/", (req, res) => {
-    res.send("Trading Journal Backend Running 🚀");
+res.sendFile(__dirname + "/public/index.html");
 });/**This gets data */
 
 
@@ -73,7 +81,7 @@ app.post("/api/trades", requireLogin, async (req, res) => {
 });
 
 
-app.delete("/api/trades/:id", async (req, res) => {
+app.delete("/api/trades/:id",requireLogin ,async (req, res) => {
   try {
 
     await Trade.findByIdAndDelete(req.params.id);
@@ -87,16 +95,9 @@ app.delete("/api/trades/:id", async (req, res) => {
   }
 });
 
-const session = require("express-session");
-
-app.use(session({
-  secret: "supersecretkey",
-  resave: false,
-  saveUninitialized: false
-}));
 
 const bcrypt = require("bcrypt");
-const User = require("./models/User");
+const User = require("./models/user");
 
 app.post("/api/signup", async (req, res) => {
 
