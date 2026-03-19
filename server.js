@@ -97,7 +97,7 @@ app.delete("/api/trades/:id",requireLogin ,async (req, res) => {
 
 
 const bcrypt = require("bcrypt");
-const User = require("./models/user");
+const User = require("./models/User");
 
 app.post("/api/signup", async (req, res) => {
 
